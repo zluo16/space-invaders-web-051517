@@ -9,16 +9,11 @@ class Spaceship {
     this.warpDrive = 'disengaged'
     this.crew = crew
     this.notifyCrew()
-
-    this.hasCrew = function() {
-      if (this.crew.length < 1) {
-        return true
-      }
-      return false
+    if (this.crew.length > 0) {
+      this.docked = false
+    } else {
+      this.docked = true
     }
-
-    this.docked = this.hasCrew()
-
   }
 
   notifyCrew() {
